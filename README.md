@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# 멋쟁이사자처럼 GitHub 협업 세션
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 2026년 멋쟁이사자처럼 연세 프론트엔드 동아리원을 위한 **PR · conflict 해결 1회성 세션 자료**.
 
-Currently, two official plugins are available:
+## 무엇을 할 건가요?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 짝(2명)이 함께 멋사 프론트엔드 랜딩페이지를 꾸미면서 GitHub PR을 날리고, **의도된 conflict**를 만나서 해결해 봅니다.
+- 사이트의 `/guide`에서 conflict 시각화, `/commands`에서 상황별 명령어, `/practice`에서 단계별 가이드를 봅니다.
 
-## React Compiler
+## 시작하기
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+브라우저: `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 짝과 같이 하기 (요약)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+자세한 7단계는 사이트 `/practice` 참고.
+
+1. 한 사람이 이 레포를 GitHub에 새 레포로 만들고 짝을 collaborator로 초대.
+2. 둘 다 clone → 각자 브랜치 → 본인 영역 수정 → PR.
+3. 첫 PR 머지 후 두 번째 PR에서 conflict 발생.
+4. 로컬에서 해결 → push.
+5. (보너스) rebase로 깔끔한 히스토리.
+
+## 🎨 TOUCH vs 🔒 DO NOT TOUCH
+
+| 만져도 되는 곳 (🎨) | 만지면 사이트가 깨지는 곳 (🔒) |
+|---|---|
+| `src/data/copy.ts` | `src/_protected/**` |
+| `src/data/members.ts` ⭐ | `src/App.tsx`, `src/main.tsx` |
+| `src/styles/tokens.css` | `src/routes/guide/**` |
+| `src/routes/landing/**` | `src/routes/commands/**`, `src/routes/practice/**` |
+
+⭐ 표시: 의도된 conflict 발생 지점.
+
+## 강사·학생 가이드
+
+- 강사: [INSTRUCTOR.md](./INSTRUCTOR.md)
+- 학생: [STUDENT.md](./STUDENT.md)
+
+## 기술 스택
+
+Vite 6 · React 19 · TypeScript 5.7 · Tailwind CSS 4 · React Router 7 · Shiki · Framer Motion · pnpm.
+
+## 라이선스
+
+MIT
