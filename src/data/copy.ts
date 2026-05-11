@@ -2,8 +2,7 @@
 // 짝 A와 B가 동시에 HERO_TITLE을 서로 다른 문구로 바꾸면 conflict가 발생합니다 (시나리오 2).
 
 export const HERO_TITLE = '멋쟁이사자처럼 프론트엔드';
-export const HERO_SUBTITLE =
-  '함께 만들고, 같이 PR을 날리고, 충돌을 해결하면서 자라는 동아리.';
+export const HERO_SUBTITLE = '함께 만들고, 같이 PR을 날리고, 충돌을 해결하면서 자라는 동아리.';
 export const HERO_CTA = '활동 보러가기';
 
 export const ABOUT_HEADLINE = '코드로 함께 자라는 사람들';
