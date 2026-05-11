@@ -1,8 +1,18 @@
-// 🎨 TOUCH: 짝이 꾸미는 랜딩페이지 컨테이너. Task 8에서 섹션들로 채워집니다.
+// 🎨 TOUCH: 랜딩페이지 컨테이너. 섹션 순서를 바꿔도 좋습니다.
+import { Hero } from './Hero';
+import { About } from './About';
+import { Members } from './Members';
+import { Activities } from './Activities';
+import { LandingFooter } from './LandingFooter';
+
 export function LandingPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <h1 className="text-4xl font-bold">랜딩 (Task 8에서 완성)</h1>
-    </div>
+    <>
+      <Hero />
+      <About />
+      <Members />
+      <Activities />
+      <LandingFooter />
+    </>
   );
 }
