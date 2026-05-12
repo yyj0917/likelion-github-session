@@ -9,9 +9,9 @@ export function Members() {
         members.ts에 본인 카드를 추가하면 여기 나타납니다.
       </p>
       <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((m, i) => (
+        {members.map((m) => (
           <li
-            key={`${m.name}-${i}`}
+            key={m.name}
             className="rounded-[var(--radius-card)] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5"
           >
             <div className="text-3xl">{m.emoji ?? '🦁'}</div>

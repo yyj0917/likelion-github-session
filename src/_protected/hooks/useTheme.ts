@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'mlh-theme';
 
+function readStoredTheme(): Theme {
+  if (typeof window === 'undefined') return 'dark';
+  const raw = localStorage.getItem(STORAGE_KEY);
+  return raw === 'dark' || raw === 'light' ? raw : 'dark';
+}
+
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'dark';
-    const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-    return stored ?? 'dark';
-  });
+  const [theme, setTheme] = useState<Theme>(readStoredTheme);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

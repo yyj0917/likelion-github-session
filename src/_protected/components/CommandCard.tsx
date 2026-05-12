@@ -1,15 +1,27 @@
 // 🔒 DO NOT TOUCH
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { CommandRecipe } from '../data/commands';
 import { CodePanel } from './CodePanel';
 
 export function CommandCard({ recipe }: { recipe: CommandRecipe }) {
   const [copied, setCopied] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   async function copyCommand() {
-    await navigator.clipboard.writeText(recipe.command);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    try {
+      await navigator.clipboard.writeText(recipe.command);
+      setCopied(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // 클립보드 접근 실패 (HTTP / 권한 거부 등) — 조용히 무시
+    }
   }
 
   return (
@@ -33,8 +45,8 @@ export function CommandCard({ recipe }: { recipe: CommandRecipe }) {
       </div>
 
       <ol className="mt-4 list-decimal space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
-        {recipe.steps.map((s, i) => (
-          <li key={i}>{s}</li>
+        {recipe.steps.map((s) => (
+          <li key={s}>{s}</li>
         ))}
       </ol>
 

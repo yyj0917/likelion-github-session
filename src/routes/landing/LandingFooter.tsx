@@ -8,7 +8,7 @@ const socials = [
 
 export function LandingFooter() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <footer className="mx-auto max-w-6xl px-6 py-16">
       <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-sm text-[color:var(--color-muted)]">{FOOTER_TAGLINE}</p>
         <ul className="flex gap-4">
@@ -26,6 +26,6 @@ export function LandingFooter() {
           ))}
         </ul>
       </div>
-    </section>
+    </footer>
   );
 }

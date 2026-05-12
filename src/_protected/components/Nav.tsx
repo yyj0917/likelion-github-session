@@ -11,7 +11,10 @@ const items = [
 
 export function Nav() {
   return (
-    <nav className="sticky top-0 z-40 border-b border-white/10 bg-[color:var(--color-bg)]/80 backdrop-blur">
+    <nav
+      aria-label="주 내비게이션"
+      className="sticky top-0 z-40 border-b border-white/10 bg-[color:var(--color-bg)]/80 backdrop-blur"
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <NavLink to="/" className="font-semibold tracking-tight">
           <span className="text-[color:var(--color-brand)]">멋사</span> Frontend
