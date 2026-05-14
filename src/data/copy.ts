@@ -1,7 +1,7 @@
 // 🎨 TOUCH: 사이트의 텍스트 카피를 모은 파일.
 // 짝 A와 B가 동시에 HERO_TITLE을 서로 다른 문구로 바꾸면 conflict가 발생합니다 (시나리오 2).
 
-export const HERO_TITLE = '멋쟁이사자처럼 프론트엔드';
+export const HERO_TITLE = '프론트엔드처럼 멋쟁이사자';
 export const HERO_SUBTITLE = '함께 만들고, 같이 PR을 날리고, 충돌을 해결하면서 자라는 동아리.';
 export const HERO_CTA = '활동 보러가기';
 
