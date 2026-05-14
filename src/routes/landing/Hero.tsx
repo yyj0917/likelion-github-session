@@ -6,10 +6,10 @@ export function Hero() {
     <section className="relative isolate overflow-hidden">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10"
+        className="absolute inset-1 -z-10"
         style={{
           background:
-            'radial-gradient(40% 10% at 20% 50%, color-mix(in oklab, var(--color-brand) 40% transparent), transparent 20%)',
+            'radial-gradient(70% 50% at 50% 30%, color-mix(in oklab, var(--color-brand) 20%, transparent), transparent 70%)',
         }}
       />
       <div className="mx-auto max-w-6xl px-10 py-32 text-center">
