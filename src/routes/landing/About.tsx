@@ -2,6 +2,7 @@
 import { ABOUT_HEADLINE, ABOUT_BODY } from '../../data/copy';
 
 const stats = [
+  { value: '30+', label: '동아리원' },
   { value: '10+', label: '동아리원' },
   { value: '12', label: '진행 프로젝트' },
   { value: '∞', label: 'PR 머지' },
