@@ -6,9 +6,7 @@ export function CommandsPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
       <header className="max-w-2xl">
-        <p className="text-sm uppercase tracking-wider text-[color:var(--color-brand)]">
-          Commands
-        </p>
+        <p className="text-sm uppercase tracking-wider text-[color:var(--color-brand)]">Commands</p>
         <h1 className="mt-2 text-4xl font-semibold sm:text-5xl">상황별 플레이북</h1>
         <p className="mt-4 text-[color:var(--color-muted)]">
           외울 명령어 목록이 아니라, 닥쳤을 때 펼쳐 보는 처방전.

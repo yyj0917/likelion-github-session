@@ -20,9 +20,9 @@ export const practiceSteps: PracticeStep[] = [
     id: 2,
     title: '각자 브랜치 생성',
     minutes: 3,
-    body: '짝 A: `git switch -c feat/hero-<이름>`. 짝 B: `git switch -c feat/footer-<이름>`. 이름은 영문 소문자로.',
+    body: '짝 A: `git checkout -b feat/hero-<이름>`. 짝 B: `git checkout -b feat/footer-<이름>`. 이름은 영문 소문자로.',
     stuck:
-      '`switch`는 Git 2.23+. 안 되면 `git checkout -b ...`. 브랜치 이름 오타나면 `git branch -m 새이름`.',
+      '**추가 팁 — `git switch -c`**: Git 2.23+에서는 `git switch -c feat/hero-<이름>`으로도 같은 결과. **차이점**: `checkout -b`는 브랜치 이동·파일 복원을 모두 처리하는 만능 명령어이고, `switch -c`는 "브랜치 생성·이동"만 담당해 의도가 더 명확합니다. **언제 뭘?** Git 버전을 모르거나 구버전 환경이면 `checkout -b`, 최신 Git(2.23+)이 확실하면 `switch -c`가 더 직관적입니다. 브랜치 이름 오타가 났다면 `git branch -m 새이름`.',
   },
   {
     id: 3,
